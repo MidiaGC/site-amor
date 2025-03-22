@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer e Gui</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nossos momentos</h1>
+            <p>Um cantinho para guardar nossos momentos</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#photo-gallery">Galeria</a></li>
+                <li><a href="#love-blog">Blogzinho</a></li>
+                <li><a href="#surprise-event">Marcar uns dates</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="photo-gallery" class="section">
+            <div class="container">
+                <h2>Nossa galeria</h2>
+                <p>Coloque fotos aqui</p>
+                
+                <div class="upload-container">
+                    <label for="photo-upload" class="upload-btn">
+                        <i class="fas fa-cloud-upload-alt"></i> Coloque fotos aqui
+                    </label>
+                    <input type="file" id="photo-upload" accept="image/*" multiple>
+                </div>
+                
+                <div class="gallery" id="gallery-container">
+                    <!-- Photos will be displayed here -->
+                    <div class="placeholder-msg">
+                        <i class="fas fa-heart"></i>
+                        <p>Coloque fotos aqui para ver</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="love-blog" class="section">
+            <div class="container">
+                <h2>Blogzinho</h2>
+                <p>Compartilhe suas ideias</p>
+                
+                <div class="blog-entry-form">
+                    <input type="text" id="blog-title" placeholder="Seu título aqui...">
+                    <textarea id="blog-content" placeholder="Escreva suas coisinhas aqui..."></textarea>
+                    <button id="save-blog" class="btn">Salvar</button>
+                </div>
+                
+                <div class="blog-entries" id="blog-entries-container">
+                    <!-- Blog entries will appear here -->
+                    <div class="placeholder-msg">
+                        <i class="fas fa-feather-alt"></i>
+                        <p>Sua história vai aparecer aqui</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="surprise-event" class="section">
+            <div class="container">
+                <h2>Datezinhos</h2>
+                <p>Área para marcar uns datezinhos</p>
+                
+                <div class="surprise-planner">
+                    <div class="form-group">
+                        <label>Tipo de date</label>
+                        <select id="event-type">
+                            <option value="date">Date romantico</option>
+                            <option value="gift">Natureza</option>
+                            <option value="trip">Viagem surpresa</option>
+                            <option value="message">Restaurante</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Data do date</label>
+                        <input type="date" id="event-date">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Detalhes do evento</label>
+                        <textarea id="event-details" placeholder="Descreva seu datezinho aqui..."></textarea>
+                    </div>
+                    
+                    <button id="create-surprise" class="btn">Criar datezinho</button>
+                </div>
+                
+                <div class="surprise-countdown hidden" id="surprise-countdown">
+                    <h3>Contagem regressiva</h3>
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span id="days">00</span>
+                            <span>Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <span>Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <span>Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <span>Seconds</span>
+                        </div>
+                    </div>
+                    <p id="surprise-description"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Feito com <i class="fas fa-heart"></i> para minha Jennifer</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
