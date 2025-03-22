@@ -47,19 +47,57 @@ Você pode modificar as configurações no arquivo `.env`:
 
 ## Acesso
 - Servidor local: http://localhost:3000
-- Para acesso externo: Configure o redirecionamento de porta no roteador para o IP do seu computador
 
-## Para uso entre dispositivos
+## Compartilhando pela Internet (Acesso de qualquer lugar)
+
+O Cloudflare Tunnel permite que sua namorada acesse o site de qualquer lugar, com mais segurança e estabilidade do que outras soluções!
+
+### Vantagens do Cloudflare Tunnel:
+- **Totalmente gratuito** sem limites de tempo
+- **Mais estável** que outras soluções
+- **Mais seguro** com criptografia de ponta a ponta
+- **URLs persistentes** disponíveis com uma conta gratuita da Cloudflare
+
+### Como usar:
+
+1. Inicie seu servidor com `start-server.bat`
+2. Execute `cloudflared-setup.bat` que vai:
+   - Baixar o Cloudflare Tunnel automaticamente (se necessário)
+   - Iniciar um túnel para seu servidor local
+   - Gerar um URL seguro para compartilhar
+
+3. Compartilhe o URL gerado com sua namorada
+4. Ela poderá acessar o site de qualquer lugar com internet!
+
+### Para uma URL permanente (opcional):
+
+Se quiser um URL que não mude cada vez que você reinicia:
+
+1. Crie uma conta gratuita em [Cloudflare](https://dash.cloudflare.com/sign-up)
+2. Execute `cloudflared tunnel login` e siga as instruções no navegador
+3. Crie um túnel nomeado:
+   ```
+   cloudflared tunnel create meu-site-amor
+   ```
+4. Configure o túnel para apontar para seu servidor:
+   ```
+   cloudflared tunnel route dns meu-site-amor meusite.exemplo.com
+   ```
+5. Inicie o túnel nomeado:
+   ```
+   cloudflared tunnel run meu-site-amor
+   ```
+
+## Para uso entre dispositivos na mesma rede
 1. Certifique-se de que seu servidor está rodando
 2. Identifique o endereço IP local do seu computador (use `ipconfig` no Windows ou `ifconfig` no Linux/Mac)
 3. No dispositivo externo, acesse `http://SEU_IP_LOCAL:3000`
-   
-*Observação: Para acesso permanente fora da rede local, considere usar um serviço como ngrok ou hospedar em uma plataforma como Heroku.*
 
 ## Tecnologias utilizadas
 - **Backend**: Node.js, Express, MongoDB
 - **Frontend**: HTML, CSS, JavaScript
 - **Armazenamento de fotos**: Sistema de arquivos local
+- **Acesso externo**: Cloudflare Tunnel (túnel seguro e gratuito)
 
 ## Personalização
 Sinta-se à vontade para personalizar o site como desejar:
